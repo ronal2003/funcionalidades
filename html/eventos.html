@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evitar Clics Múltiples</title>
+</head>
+<body>
+    <button id="agregar">Agregar Planilla</button>
+    <script>
+        var count = 0; 
+        document.getElementById("agregar").addEventListener("click", function(event) {
+            const boton = event.target;
+            // Desactivar el botón
+            boton.disabled = true;
+            
+            // Simulación de generación de planilla
+            // alert("Planilla generada!");
+            console.log('count: ' + count);
+
+            // Reactivar el botón después de cierto tiempo (opcional)
+            setTimeout(() => {
+                boton.disabled = false;
+            }, 1000); // Reactivar después de 5 segundos
+
+            count++;
+        });
+    </script>
+</body>
+</html>
